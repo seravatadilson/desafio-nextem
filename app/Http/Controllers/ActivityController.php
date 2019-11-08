@@ -27,13 +27,23 @@ class ActivityController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'description' => 'required',
+            'name'=>'required',
+            'description'=>'required',
+            'project_id'=>'required',
+            'user_id'=>'required',
+            'status_id'=>'required',
+            'deadline'=>'required',
         ]);
 
         $activity = new Activity();
-        $activity->name = $request->title;
+
+        
+        $activity->name = $request->activity;
         $activity->description = $request->description;
+        $activity->project_id = $request->projects_id;
+        $activity->user_id = $request->user_id;
+        $activity->status_id = $request->status_id;
+        $activity->deadline = $request->deadline;
 
         if ($this->user->activity()->save($activity))
             return response()->json([

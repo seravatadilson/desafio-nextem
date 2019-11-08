@@ -16,10 +16,10 @@ class ApiController extends Controller
 
     public function login(Request $request) {
         
-        $input = $request->only('email', 'password');
+        //$input = $request->only('email', 'password');
         $token = null;
 
-        if(!$token = JWTAuth::attempt($input)){
+        if(!$token = JWTAuth::attempt(['email' => $request->email, 'password' => $request->password, 'isAdmin' => 1])){
 
             //Caso haja falha no login method http 401 -> não autorizzado
             return response()->json([

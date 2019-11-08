@@ -1,3 +1,42 @@
+
+
+## Para instalar dependências deste projeto segue as instruções abaixo:
+
+composer install
+
+## Configurar variáveis de ambiente
+cp .env.example .env <br>
+php artisan key:generate
+
+## Criar migrations (Tabelas e Seeders)
+php artisan migrate --seed
+
+## Usuário de teste
+
+email: teste@nextem.com.br<br>
+senha: 1234
+
+
+## Rotas  da aplicação
+(/) => uri padrão para o login
+(/logut) => uri padrão para logout
+
+## Após realizar login, rotas são chamadas por meio de ações 
+## dentro da aplicação
+
+## O fluxo de ações, occorre como segue:
+# 1 - Passo criar um projeto;
+# 2 - Passo adionar atividades a um projeto;
+# 3 - cadastrar usuaios para as atividades;
+# 4 - adicionar data de deadline para cada atividade;
+
+## Apos criar projeto é possivel listar detalhes do mesmo
+
+
+## APi Rotas criadas
+## Rota de login => /api/login
+## Rota para registrar atividade => /api/register
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
